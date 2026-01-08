@@ -1,10 +1,4 @@
 A responsive web application that consumes the PokéAPI to display Pokémon with their original sprites. Built for educational purposes to practice frontend development and API integration.
-
-https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?logo=javascript&logoColor=black
-https://img.shields.io/badge/API-PokeAPI-FF3860?logo=swagger&logoColor=white
-https://img.shields.io/badge/License-MIT-green
-https://img.shields.io/badge/Status-Active-success
-
 ✨ Features
 📱 Pokémon Gallery: Browse Pokémon in a clean, responsive grid layout
 
