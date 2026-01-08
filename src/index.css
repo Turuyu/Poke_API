@@ -1,0 +1,360 @@
+/* ===============================
+   RESET Y CONFIGURACIÓN BASE
+   =============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* ===============================
+   FONDO SIMPLE
+   =============================== */
+body {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+/* ===============================
+   CONTENEDOR PRINCIPAL
+   =============================== */
+#root {
+  min-height: 100vh;
+  padding: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ===============================
+   ENCABEZADO
+   =============================== */
+h1 {
+  color: #2d3748;
+  margin-bottom: 24px;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* ===============================
+   SEARCH BAR (POKÉBALL REAL)
+   =============================== */
+
+.search-container {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  margin-bottom: 24px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 44px;
+  border-radius: 999px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  outline: none;
+
+  background-color: #fff;
+
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
+  transition: box-shadow 0.2s ease, border 0.2s ease;
+}
+
+.search-input:focus {
+  border-color: #e3350d; /* Rojo Pokébola */
+  box-shadow: 0 2px 10px rgba(227, 53, 13, 0.3);
+}
+
+/* Ícono Pokébola */
+.search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+.search-input:focus + .search-icon {
+  transform: translateY(-50%) rotate(20deg);
+}
+
+
+/* ===============================
+   CONTENEDOR DE TARJETAS
+   =============================== */
+.pokemon-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+
+/* ===============================
+   POKÉDEX RETRO CARD 
+   =============================== */
+
+.pokemon-card.retro {
+  display: flex;
+  align-items: center;
+
+  background-color: #f5f5f5;
+  border: 4px solid #111;
+  border-radius: 8px;
+
+  padding: 12px;
+  gap: 18px;
+
+  min-height: 120px;
+
+  box-shadow: inset -3px -3px 0 #cfcfcf;
+}
+
+/* Contenedor del sprite */
+.pokemon-sprite-container {
+  width: 190px;
+  height: 190px;
+
+  background-color: #ffffff;
+  border: 5px solid #111;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Sprite estilo Game Boy */
+.pokemon-sprite {
+  width: 150px;
+  height: 150px;
+
+}
+
+
+/* Info */
+.pokemon-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* ID */
+.pokemon-id {
+  font-size: 18px;  /* antes 13 */
+  font-weight: bold;
+  color: #333;
+}
+
+/* Nombre */
+.pokemon-name {
+  font-size: 20px; /* antes 14 */
+  font-weight: bold;
+  text-transform: capitalize;
+  color: #000;
+}
+
+
+/* ===============================
+   ID DEL POKÉMON
+   =============================== */
+.pokemon-id {
+  font-weight: 600;
+  font-size: 14px;
+  color: #718096;
+  background-color: #f7fafc;
+  padding: 6px 12px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+  align-self: flex-start;
+}
+
+/* ===============================
+   IMAGEN DEL POKÉMON
+   =============================== */
+.pokemon-image {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  margin: 16px 0;
+  transition: transform 0.3s ease;
+}
+
+.pokemon-card:hover .pokemon-image {
+  transform: scale(1.05);
+}
+
+/* ===============================
+   NOMBRE DEL POKÉMON
+   =============================== */
+.pokemon-name {
+  text-transform: capitalize;
+  font-size: 1.25rem;
+  color: #2d3748;
+  font-weight: 600;
+  margin-top: 12px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background-color: #f7fafc;
+  width: 100%;
+}
+
+/* ===============================
+   PAGINACIÓN (ESTILO POKÉDEX)
+   =============================== */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.pagination-button {
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: none;
+
+  background: linear-gradient(135deg, #ff0000, #cc0000);
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s ease;
+}
+
+.pagination-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.pagination-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.pagination-button:disabled {
+  background: #bdbdbd;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+
+/* ===============================
+   RESPONSIVE DESIGN
+   =============================== */
+@media (max-width: 768px) {
+  #root {
+    padding: 16px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .pokemon-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .pokemon-card {
+    min-height: 300px;
+    padding: 20px 16px;
+  }
+  
+  .pokemon-image {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 640px) {
+  .pokemon-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+  
+  .pagination {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .pagination button {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pokemon-grid {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    font-size: 1.75rem;
+  }
+  
+  input[type="text"] {
+    padding: 12px 16px;
+    font-size: 15px;
+  }
+}
+
+/* ===============================
+   ESTADOS DE CARGA (opcional)
+   =============================== */
+.loading-skeleton {
+  animation: pulse 1.5s ease-in-out infinite;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  border-radius: 16px;
+}
+
+@keyframes pulse {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* ===============================
+   EFECTO DE FOCO ACCESIBLE
+   =============================== */
+.pokemon-card:focus-visible {
+  outline: 2px solid #4299e1;
+  outline-offset: 2px;
+}
+
+/* ===============================
+   COLORES DE TIPO (placeholder para futura implementación)
+   =============================== */
+.type-normal { background-color: #a8a878; }
+.type-fire { background-color: #f08030; }
+.type-water { background-color: #6890f0; }
+.type-grass { background-color: #78c850; }
+.type-electric { background-color: #f8d030; }
+.type-ice { background-color: #98d8d8; }
+.type-fighting { background-color: #c03028; }
+.type-poison { background-color: #a040a0; }
+.type-ground { background-color: #e0c068; }
+.type-flying { background-color: #a890f0; }
+.type-psychic { background-color: #f85888; }
+.type-bug { background-color: #a8b820; }
+.type-rock { background-color: #b8a038; }
+.type-ghost { background-color: #705898; }
+.type-dark { background-color: #705848; }
+.type-dragon { background-color: #7038f8; }
+.type-steel { background-color: #b8b8d0; }
+.type-fairy { background-color: #ee99ac; }
+
